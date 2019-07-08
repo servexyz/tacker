@@ -40,7 +40,7 @@
     "dev:vanillaModule": "babel-node src/index.js",
     "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
     "dev:server": "webpack --mode development --watch --display minimal",
-    "test": "npm-run-all -s clean:build build test:liveReloadedAva",
+    "test": "npm-run-all -s clean build test:liveReloadedAva",
     "test:ava": "ava",
     "test:liveReloadedAva": "ava --watch",
     "build": "webpack --mode production --display minimal",
@@ -57,7 +57,7 @@
   "ava": {
     "files": [
       "!npm-starter-sample-module/**/*.js",
-      "tests/"
+      "tests/**/*"
     ],
     "require": [
       "@babel/register",

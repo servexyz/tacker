@@ -136,6 +136,7 @@ function parseLineOptions(options) {
 }
 
 export function printLine(colorOrOptions) {
+  let lines = [];
   let opts = parseLineOptions(colorOrOptions);
   if (opts[0] == "object") {
     var { color, length, character, quantity } = opts[1];
@@ -149,7 +150,9 @@ export function printLine(colorOrOptions) {
   let lineColor = getChalkColor(color);
   for (let i = 0; i < quantity; i++) {
     log(lineColor(line));
+    lines.push(lineColor(line));
   }
+  return lines;
 }
 
 export function pathsExistProm(arrPathsObj, szPreErrorMessage) {
