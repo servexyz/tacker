@@ -67,7 +67,9 @@ export function printMirror(
 
   keyColor = getChalkColor(szKeyColor);
   valueColor = getChalkColor(szValueColor);
-  log(`${keyColor(key)}: ${valueColor(value)}`);
+  let mirror = `${keyColor(key)}: ${valueColor(value)}`;
+  log(mirror);
+  return mirror;
 }
 /* 
   TODO: Add oLineStyle arg

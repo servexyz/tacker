@@ -8,8 +8,16 @@ test("print a blue line", t => {
   t.snapshot(foo);
 });
 
-test("print inner function of getChalkColor", t => {
+test("confirm chalk function returned from getChalkColor", t => {
   let getChalkColorFunction = getChalkColor("blue");
-  printMirror({ getChalkColorFunction }, "blue", "grey");
+  // printMirror({ getChalkColorFunction }, "blue", "grey");
   t.snapshot(getChalkColorFunction);
+});
+
+test("print a mirror of a mock obj", t => {
+  const mock = {
+    foo: "bar"
+  };
+  let mirror = printMirror({ mock }, "blue", "grey");
+  t.snapshot(mirror);
 });
