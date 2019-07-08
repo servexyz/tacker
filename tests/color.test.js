@@ -10,7 +10,6 @@ test("print a blue line", t => {
 
 test("confirm chalk function returned from getChalkColor", t => {
   let getChalkColorFunction = getChalkColor("blue");
-  // printMirror({ getChalkColorFunction }, "blue", "grey");
   t.snapshot(getChalkColorFunction);
 });
 
