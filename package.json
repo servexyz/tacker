@@ -1,11 +1,11 @@
 {
-  "name": "node-starter",
-  "version": "1.0.0",
+  "name": "tacker",
+  "version": "0.1.0",
   "main": "build/main.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/servexyz/node-starter"
+    "url": "https://github.com/servexyz/tacker"
   },
   "devDependencies": {
     "@ava/babel-preset-stage-4": "^1.1.0",
@@ -14,7 +14,6 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "7.1.0",
     "@babel/register": "7.0.0",
-    "@packtracker/webpack-plugin": "^1.1.1",
     "ava": "^1.0.0-beta.8",
     "babel-loader": "^8.0.4",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
@@ -28,19 +27,18 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "dotenv": "^6.1.0"
+    "chalk": "^2.4.2",
+    "dotenv": "^6.1.0",
+    "fs-extra": "^8.1.0",
+    "is-empty": "^1.2.0"
   },
   "scripts": {
     "start": "npm run dev",
-    "clean": "npm run clean:docker",
+    "clean": "npm run clean:build",
     "clean:build": "rm -Rf ./build",
-    "clean:docker": "docker rm -f $(docker ps -aqf 'name=node-starter')",
     "dev": "npm run dev:liveReloadedModule",
     "dev:vanillaModule": "babel-node src/index.js",
     "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
-    "dev:liveReloadedDocker": "npm-run-all -p docker:compose dev:liveReloadedModule docker:liveReload ",
-    "docker:liveReload": "npx docker-live-reload 'src/**/*' node-starter_server_1 /usr/src/server/src",
-    "docker:compose": "docker-compose up -d",
     "dev:server": "webpack --mode development --watch --display minimal",
     "test": "npm-run-all -s clean:build build test:liveReloadedAva",
     "test:ava": "ava",
