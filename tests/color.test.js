@@ -5,6 +5,5 @@ import { getChalkColor, printLine, printMirror } from "../src/index";
 
 test("print a blue line", async t => {
   let foo = printLine("blue");
-  printMirror({ foo }, "magenta", "grey");
-  t.pass();
+  t.snapshot(foo);
 });
