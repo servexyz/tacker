@@ -11,6 +11,7 @@ tests
 .prettierignore
 .dockerignore
 docs/logo
+.env.sample
 .travis.yml
 package-lock.json
 package.json
