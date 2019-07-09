@@ -9,6 +9,8 @@ tests
 .gitignore
 .gitmodules
 .prettierignore
+.dockerignore
+docs/logo
 .travis.yml
 package-lock.json
 package.json
