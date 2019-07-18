@@ -141,24 +141,27 @@ export function printVersion(packageSource) {
   let sourceType = is(packageSource);
   switch (sourceType) {
     case "undefined":
-      return "is undefined";
+      handlePackageSourceUndefined();
+      break;
     case "string":
-      return "is string";
+      handlePackageSourceString(packageSource);
+      break;
     case "Object":
-      return "is object";
+      handlePackageSourceObject(packageSource);
+      break;
     default:
       return `${chalk.blue(
         "printVersion"
       )} doesn't recognize the param type. \nAccepted argument types: null, packagePath<sz>, packageObject<JSON>`;
   }
 }
-function handleEmptyPackageSource() {
+function handlePackageSourceUndefined() {
   //TODO: Crawl up til package.json is found
 }
-function handlePackagePath() {
+function handlePackageSourceString() {
   //TODO: Parse package path (with or without "package.json" appended)
 }
-function handlePackageObject() {
+function handlePackageSourceObject() {
   //TODO: Parse { name: "my-module", description: "moooodule" }
 }
 export function printLine(colorOrOptions) {
