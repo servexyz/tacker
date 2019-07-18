@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import isEmpty from "is-empty";
+import is from "@sindresorhus/is";
 const log = console.log;
 
 export function getChalkColor(szColor) {
@@ -136,16 +137,30 @@ function parseLineOptions(options) {
   }
 }
 
+export function printVersion(packageSource) {
+  let sourceType = is(packageSource);
+  switch (sourceType) {
+    case "undefined":
+      return "is undefined";
+    case "string":
+      return "is string";
+    case "Object":
+      return "is object";
+    default:
+      return `${chalk.blue(
+        "printVersion"
+      )} doesn't recognize the param type. \nAccepted argument types: null, packagePath<sz>, packageObject<JSON>`;
+  }
+}
 function handleEmptyPackageSource() {
   //TODO: Crawl up til package.json is found
-
+}
 function handlePackagePath() {
   //TODO: Parse package path (with or without "package.json" appended)
 }
 function handlePackageObject() {
   //TODO: Parse { name: "my-module", description: "moooodule" }
 }
-export function printVersion(packageSource) {}
 export function printLine(colorOrOptions) {
   let lines = [];
   let opts = parseLineOptions(colorOrOptions);
