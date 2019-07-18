@@ -136,6 +136,16 @@ function parseLineOptions(options) {
   }
 }
 
+function handleEmptyPackageSource() {
+  //TODO: Crawl up til package.json is found
+
+function handlePackagePath() {
+  //TODO: Parse package path (with or without "package.json" appended)
+}
+function handlePackageObject() {
+  //TODO: Parse { name: "my-module", description: "moooodule" }
+}
+export function printVersion(packageSource) {}
 export function printLine(colorOrOptions) {
   let lines = [];
   let opts = parseLineOptions(colorOrOptions);
