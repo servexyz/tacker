@@ -74,7 +74,7 @@ printLine("blue")
 <hr />
 </details>
 
-<details><summary><code>printMirror({ mVariable }, szVariableKeyColor, szVariableValueColor)</code></summary>
+<details><summary><code>printMirror({ mVariable }, szKeyColor, szValueColor)</code></summary>
 
 <hr />
 This will print the variable's name and the variable's value (regardless of variable type).
