@@ -48,8 +48,6 @@
     "test:ava": "ava",
     "test:liveReloadedAva": "ava --watch",
     "build": "webpack --mode production --display minimal",
-    "publish": "npm run build && npm publish",
-    "publish:np": "npm run build && npx np",
     "production": "npm run build && node build/main.js",
     "ci": "npm run build && npm run ci:local:timed",
     "ci:local": "trevor",
