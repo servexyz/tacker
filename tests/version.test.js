@@ -1,9 +1,9 @@
 import test from "ava";
-import { printVersion } from "../src/index";
+import chalk from "chalk";
+import { printPkgVersion, printPkgProp } from "../src/index";
 
-test("printVersion is detecting types", t => {
-  t.plan(3);
-  t.is(printVersion(), "is undefined");
-  t.is(printVersion("str"), "is string");
-  t.is(printVersion({ foo: "bar" }), "is object");
+test(`${chalk.blue("printPkgVersion()")} equals ${chalk.blue(
+  "printPkgProp('version')"
+)}`, async t => {
+  t.is(await printPkgVersion(), await printPkgProp("version"));
 });

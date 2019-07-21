@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import isEmpty from "is-empty";
 import is from "@sindresorhus/is";
+import { getPkgProp } from "get-pkg-prop";
 const log = console.log;
 
 export function getChalkColor(szColor) {
@@ -137,32 +138,25 @@ function parseLineOptions(options) {
   }
 }
 
-export function printVersion(packageSource) {
-  let sourceType = is(packageSource);
-  switch (sourceType) {
-    case "undefined":
-      handlePackageSourceUndefined();
-      break;
-    case "string":
-      handlePackageSourceString(packageSource);
-      break;
-    case "Object":
-      handlePackageSourceObject(packageSource);
-      break;
-    default:
-      return `${chalk.blue(
-        "printVersion"
-      )} doesn't recognize the param type. \nAccepted argument types: null, packagePath<sz>, packageObject<JSON>`;
+export async function printPkgVersion(mPackageSource) {
+  let version;
+  if (is.nullOrUndefined(mPackageSource)) {
+    version = await getPkgProp("version");
+  } else {
+    version = await getPkgProp("version", mPackageSource);
   }
+  printMirror({ version }, "blue", "grey");
+  return version;
 }
-function handlePackageSourceUndefined() {
-  //TODO: Crawl up til package.json is found
-}
-function handlePackageSourceString() {
-  //TODO: Parse package path (with or without "package.json" appended)
-}
-function handlePackageSourceObject() {
-  //TODO: Parse { name: "my-module", description: "moooodule" }
+export async function printPkgProp(szProperty, mPackageSource) {
+  let property;
+  if (is.nullOrUndefined(mPackageSource)) {
+    property = await getPkgProp(szProperty);
+  } else {
+    property = await getPkgProp(szProperty, mPackageSource);
+  }
+  printMirror({ property }, "blue", "grey");
+  return property;
 }
 export function printLine(colorOrOptions) {
   let lines = [];
