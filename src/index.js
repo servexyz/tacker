@@ -1,5 +1,7 @@
 import chalk from "chalk";
 import isEmpty from "is-empty";
+import is from "@sindresorhus/is";
+import { getPkgProp } from "get-pkg-prop";
 const log = console.log;
 
 export function getChalkColor(szColor) {
@@ -136,6 +138,26 @@ function parseLineOptions(options) {
   }
 }
 
+export async function printPkgVersion(mPackageSource) {
+  let version;
+  if (is.nullOrUndefined(mPackageSource)) {
+    version = await getPkgProp("version");
+  } else {
+    version = await getPkgProp("version", mPackageSource);
+  }
+  printMirror({ version }, "blue", "grey");
+  return version;
+}
+export async function printPkgProp(szProperty, mPackageSource) {
+  let property;
+  if (is.nullOrUndefined(mPackageSource)) {
+    property = await getPkgProp(szProperty);
+  } else {
+    property = await getPkgProp(szProperty, mPackageSource);
+  }
+  printMirror({ property }, "blue", "grey");
+  return property;
+}
 export function printLine(colorOrOptions) {
   let lines = [];
   let opts = parseLineOptions(colorOrOptions);

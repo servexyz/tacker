@@ -29,9 +29,11 @@
     "webpackbar": "^3.2.0"
   },
   "dependencies": {
+    "@sindresorhus/is": "^1.0.0",
     "chalk": "^2.4.2",
     "dotenv": "^8.0.0",
     "fs-extra": "^8.1.0",
+    "get-pkg-prop": "^0.2.0",
     "is-empty": "^1.2.0"
   },
   "scripts": {
@@ -42,7 +44,7 @@
     "dev:vanillaModule": "babel-node src/index.js",
     "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
     "dev:server": "webpack --mode development --watch --display minimal",
-    "test": "snyk test && npm-run-all -s clean build test",
+    "test": "npm-run-all -s clean build test:liveReloadedAva",
     "test:ava": "ava",
     "test:liveReloadedAva": "ava --watch",
     "build": "webpack --mode production --display minimal",
