@@ -23,25 +23,17 @@ In a sailing context, tack means "change course by turning a boat's head into an
 
 ## Getting Started
 
-**Install**
+#### Install
 
-```
+```sh
 npm install tacker -S
 ```
 
-**Add to source**
+#### Add to source
 
+```js
+import { printLine, printMirror, printPkgVersion, printPkgProp} from 'tacker'
 ```
-npm install tacker -S
-```
-
-**Use**
-
-```
-printLine("blue")
-```
-
-![blue line](./docs/blueLine.png)
 
 ## API
 
@@ -66,7 +58,6 @@ printLine("blue")
 <ul>
 <li> <code>printLine("blue")</code></li>
 
-<li><code>printLine({ color: "blue", character: "-", length: 59, quantity: 1})</code></li>
 
 <h4>Output</h4>
 <img src="./docs/blueLine.png" alt="printLine output" />
