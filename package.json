@@ -7,6 +7,22 @@
     "type": "git",
     "url": "https://github.com/servexyz/tacker"
   },
+  "keywords": [
+    "servexyz",
+    "tacker",
+    "debug",
+    "logger",
+    "debug logger",
+    "chalk",
+    "terminal",
+    "print line",
+    "print variable",
+    "print mirror",
+    "print JSON variable",
+    "print package version",
+    "print package property",
+    "conditional logs"
+  ],
   "devDependencies": {
     "@ava/babel-preset-stage-4": "^3.0.0",
     "@babel/core": "7.5.0",

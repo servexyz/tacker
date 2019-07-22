@@ -32,14 +32,13 @@ npm install tacker -S
 #### Add to source
 
 ```js
-import { printLine, printMirror, printPkgVersion, printPkgProp} from 'tacker'
+import { printLine, printMirror, printPkgVersion, printPkgProp } from "tacker";
 ```
 
 ## API
 
-<details><summary><code>printLine(szColor)</code> or <code>printLine(oColor)</code></summary>
+<details><summary><code>printLine(szColor || oColor)</code> </summary>
 
-<hr />
 <h4>Where</h4>
 
 <ul>
@@ -58,7 +57,6 @@ import { printLine, printMirror, printPkgVersion, printPkgProp} from 'tacker'
 <ul>
 <li> <code>printLine("blue")</code></li>
 
-
 <h4>Output</h4>
 <img src="./docs/blueLine.png" alt="printLine output" />
 
@@ -67,7 +65,6 @@ import { printLine, printMirror, printPkgVersion, printPkgProp} from 'tacker'
 
 <details><summary><code>printMirror({ mVariable }, szKeyColor, szValueColor)</code></summary>
 
-<hr />
 This will print the variable's name and the variable's value (regardless of variable type).
 
 <h4>Where</h4>
@@ -86,7 +83,7 @@ This will print the variable's name and the variable's value (regardless of vari
 </code>
 
 <h4>Output</h4>
-<img src="./docs/printMirror.png" alt="printMirror outpu"/>
+<img src="./docs/printMirror.png" alt="printMirror output"/>
 
 <hr />
 </details>
@@ -123,7 +120,6 @@ This will print the version of the specified package.
 </details>
 
 <details><summary><code>printPkgProp(szProperty, mPkgSource)</code></summary>
-<hr />
 
 This will print any property from the specified package. mPkgSource accepted types include:
 
