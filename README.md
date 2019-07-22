@@ -37,7 +37,7 @@ import { printLine, printMirror, printPkgVersion, printPkgProp } from "tacker";
 
 ## API
 
-<details><summary><code>printLine(szColor || oColor)</code> </summary>
+<details><summary><code>printLine(szColor || oColor)</code> - Sync </summary>
 
 <h4>Where</h4>
 
@@ -63,7 +63,7 @@ import { printLine, printMirror, printPkgVersion, printPkgProp } from "tacker";
 <hr />
 </details>
 
-<details><summary><code>printMirror({ mVariable }, szKeyColor, szValueColor)</code></summary>
+<details><summary><code>printMirror({ mVariable }, szKeyColor, szValueColor)</code> - Sync</summary>
 
 This will print the variable's name and the variable's value (regardless of variable type).
 
@@ -88,7 +88,7 @@ This will print the variable's name and the variable's value (regardless of vari
 <hr />
 </details>
 
-<details><summary><code>printPkgVersion(mPkgSource)</code></summary>
+<details><summary><code>printPkgVersion(mPkgSource)</code> - Async</summary>
 <hr />
 
 This will print the version of the specified package.
@@ -107,10 +107,10 @@ This will print the version of the specified package.
 
 <h4>Example</h4>
 <ul>
-<li><code>printPkgVersion()</code></li>
-<li><code>printPkgVersion("/path")</code></li>
-<li><code>printPkgVersion("/path/package.json")</code></li>
-<li><code>printPkgVersion({ name: "tacker", version: "x.y.z", ...})</code></li>
+<li><code>await printPkgVersion()</code></li>
+<li><code>await printPkgVersion("/path")</code></li>
+<li><code>await printPkgVersion("/path/package.json")</code></li>
+<li><code>await printPkgVersion({ name: "tacker", version: "x.y.z", ...})</code></li>
 </ul>
 
 <h4>Output</h4>
@@ -119,7 +119,7 @@ This will print the version of the specified package.
 <hr />
 </details>
 
-<details><summary><code>printPkgProp(szProperty, mPkgSource)</code></summary>
+<details><summary><code>printPkgProp(szProperty, mPkgSource)</code> - Async</summary>
 
 This will print any property from the specified package.
 
@@ -138,10 +138,10 @@ This will print any property from the specified package.
 
 <h4>Example</h4>
 <ul>
-<li><code>printPkgProp("version")</code> </li> 
-<li><code>printPkgProp("version", "/path")</code></li>
-<li><code>printPkgProp("version", "/path/package.json")</code></li>
-<li><code>printPkgProp("version", { name: "tacker", version: "x.y.z", ...})</code></li>
+<li><code>await printPkgProp("version")</code> </li> 
+<li><code>await printPkgProp("version", "/path")</code></li>
+<li><code>await printPkgProp("version", "/path/package.json")</code></li>
+<li><code>await printPkgProp("version", { name: "tacker", version: "x.y.z", ...})</code></li>
 </ul>
 
 <h4>Output</h4>
