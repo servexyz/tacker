@@ -121,7 +121,7 @@ This will print the version of the specified package.
 
 <details><summary><code>printPkgProp(szProperty, mPkgSource)</code></summary>
 
-This will print any property from the specified package. mPkgSource accepted types include:
+This will print any property from the specified package.
 
 <h4>Where</h4>
 <ul>
