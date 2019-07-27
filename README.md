@@ -80,10 +80,10 @@ This will print the variable's name and the variable's value (regardless of vari
 </ul>
 
 <h4>Example</h4>
-<code style="display:block">const mock = {
+<code>
+const mock = {
     foo: "bar"
   };
-
 printMirror({mock}, "blue", "grey")
 </code>
 
