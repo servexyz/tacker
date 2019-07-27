@@ -54,10 +54,15 @@ import { printLine, printMirror, printPkgVersion, printPkgProp } from "tacker";
 </ul>
 
 <h4>Examples</h4>
+
 <ul>
 <li> <code>printLine("blue")</code></li>
+<li> <code>printLine({color:"blue", character:"-","length:59",quantity:1})</code></li>
+</ul>
 
 <h4>Output</h4>
+<em>Both of the above examples produce this identical output</em>
+
 <img src="./docs/blueLine.png" alt="printLine output" />
 
 <hr />
@@ -75,11 +80,11 @@ This will print the variable's name and the variable's value (regardless of vari
 </ul>
 
 <h4>Example</h4>
-<code>
-  const mock = {
+<code style="display:block">const mock = {
     foo: "bar"
   };
-  printMirror({mock}, "blue", "grey")
+
+printMirror({mock}, "blue", "grey")
 </code>
 
 <h4>Output</h4>
