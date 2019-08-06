@@ -34,6 +34,7 @@ export const colorsArr = [
 
 export const colors = getObjFromArray(colorsArr);
 
+//TODO: Change getChalkColor from lazy switch statement to fn constructor
 export function getChalkColor(szColor) {
   let color = szColor.toLowerCase();
   switch (color) {
