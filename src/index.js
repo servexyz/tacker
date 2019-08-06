@@ -1,16 +1,45 @@
+const log = console.log;
 import chalk from "chalk";
 import isEmpty from "is-empty";
 import is from "@sindresorhus/is";
 import { getPkgProp } from "get-pkg-prop";
-const log = console.log;
 
+export function getObjFromArray(arr) {
+  let obj = {};
+  arr.map(clr => {
+    return Object.assign(obj, {
+      [clr]: clr
+    });
+  });
+  return obj;
+}
+export const colorsArr = [
+  "black",
+  "red",
+  "green",
+  "yellow",
+  "blue",
+  "magenta",
+  "cyan",
+  "white",
+  "grey",
+  "redBright",
+  "greenBright",
+  "yellowBright",
+  "blueBright",
+  "magentaBright",
+  "cyanBright",
+  "whiteBright"
+];
+
+export const colors = getObjFromArray(colorsArr);
+
+//TODO: Change getChalkColor from lazy switch statement to fn constructor
 export function getChalkColor(szColor) {
   let color = szColor.toLowerCase();
   switch (color) {
     case "red":
       return chalk.red;
-    case "orange":
-      return chalk.orange;
     case "yellow":
       return chalk.yellow;
     case "green":
