@@ -1,8 +1,38 @@
+const log = console.log;
 import chalk from "chalk";
 import isEmpty from "is-empty";
 import is from "@sindresorhus/is";
 import { getPkgProp } from "get-pkg-prop";
-const log = console.log;
+
+export function convertColorArrToObj(arr) {
+  let obj = {};
+  arr.map(clr => {
+    return Object.assign(obj, {
+      [clr]: clr
+    });
+  });
+  return obj;
+}
+export const colorsArr = [
+  "black",
+  "red",
+  "green",
+  "yellow",
+  "blue",
+  "magenta",
+  "cyan",
+  "white",
+  "grey",
+  "redBright",
+  "greenBright",
+  "yellowBright",
+  "blueBright",
+  "magentaBright",
+  "cyanBright",
+  "whiteBright"
+];
+
+export const colors = convertColorArrToObj(colorsArr);
 
 export function getChalkColor(szColor) {
   let color = szColor.toLowerCase();
