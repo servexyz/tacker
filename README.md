@@ -1,25 +1,9 @@
 ![logo](./docs/Tacker.png)
 
-> Logger helpers for your debugging journey
+> Console log helpers for your debugging journey
 
 ![travis-build-status](https://travis-ci.org/servexyz/tacker.svg?branch=master)
 
-## FAQ
-
-<details><summary>Name</summary>
-Portmaneau of "tack" and "logger"
-
-In a sailing context, tack means "change course by turning a boat's head into and through the wind"
-
-</details>
-
-<details><summary>Why</summary>There's reasons to use more sophisticated tooling (stack traces, Chrome dev tools, etc). However, when you're getting up-and-running with a project, it's extremely helpful to be able to log values. The issue is before long, your terminal is contaminated with a slew of logs. Tacker exists to solve this</details>
-<details><summary>How</summary>
-<ul>
-<li> Make logs prettier (current)</li>
-<li> Only log things in certain circumstances (future)</li>
-</ul>
-</details>
 
 ## Getting Started
 
@@ -154,3 +138,20 @@ This will print any property from the specified package.
 
 <hr />
 </details>
+
+
+## FAQ
+
+<details><summary>Name</summary>
+Portmaneau of "tack" and "logger"
+
+In a sailing context, tack means <em>"change course by turning a boat's head into and through the wind"</em>
+</details>
+<details><summary>Why</summary>There's reasons to use more sophisticated tooling (stack traces, Chrome dev tools, etc). However, when you're getting up-and-running with a project, it's extremely helpful to be able to log values. The issue is before long, your terminal is contaminated with a slew of logs. Tacker exists to solve this</details>
+<details><summary>How</summary>
+<ul>
+<li> Make logs prettier (current)</li>
+<li> Only log things in certain circumstances (future)</li>
+</ul>
+</details>
+
