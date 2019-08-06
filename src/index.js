@@ -4,7 +4,7 @@ import isEmpty from "is-empty";
 import is from "@sindresorhus/is";
 import { getPkgProp } from "get-pkg-prop";
 
-export function convertColorArrToObj(arr) {
+export function getObjFromArray(arr) {
   let obj = {};
   arr.map(clr => {
     return Object.assign(obj, {
@@ -32,7 +32,7 @@ export const colorsArr = [
   "whiteBright"
 ];
 
-export const colors = convertColorArrToObj(colorsArr);
+export const colors = getObjFromArray(colorsArr);
 
 export function getChalkColor(szColor) {
   let color = szColor.toLowerCase();
