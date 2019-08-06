@@ -39,8 +39,6 @@ export function getChalkColor(szColor) {
   switch (color) {
     case "red":
       return chalk.red;
-    case "orange":
-      return chalk.orange;
     case "yellow":
       return chalk.yellow;
     case "green":
