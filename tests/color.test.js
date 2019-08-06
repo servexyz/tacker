@@ -3,7 +3,9 @@ import chalk from "chalk";
 import test from "ava";
 import is from "@sindresorhus/is";
 import {
+  reduceObjFromArray,
   colors,
+  colorsArr,
   getObjFromArray,
   getChalkColor,
   printLine,
@@ -35,6 +37,7 @@ test(`${chalk.cyan(
   let inputMock = ["foo", "bar"];
   let outputMock = { foo: "foo", bar: "bar" };
   t.deepEqual(getObjFromArray(inputMock), outputMock);
+  t.pass();
 });
 
 test(`${chalk.cyan("getChalkColor")} returns red when passing ${chalk.cyan(
