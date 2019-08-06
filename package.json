@@ -1,6 +1,6 @@
 {
   "name": "tacker",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Console log helpers for your debugging journey",
   "main": "build/main.js",
   "license": "MIT",
