@@ -5,14 +5,11 @@ import is from "@sindresorhus/is";
 import { getPkgProp } from "get-pkg-prop";
 
 export function getObjFromArray(arr) {
-  let obj = {};
-  arr.map(clr => {
-    return Object.assign(obj, {
-      [clr]: clr
-    });
-  });
-  return obj;
+  return arr.reduce((obj, clr) => {
+    return Object.assign(obj, { [clr]: clr });
+  }, {});
 }
+
 export const colorsArr = [
   "black",
   "red",
@@ -73,7 +70,7 @@ export function getChalkColor(szColor) {
   }
 }
 
-//TODO: Create an enum of available colors (instead of relying on strings)
+//TODO: Think about exporting default; tk.mirror is easier to type
 //TODO: Rename "printMirror" to just "mirror" (or something else)
 export function printMirror(
   oVar,
@@ -110,36 +107,6 @@ export function printMirror(
     "were both found"
   );
 */
-
-//? Replace printMarquee with functions below?
-//TODO: printAndList
-//TODO: printAndOrList
-//TODO: printOrList
-
-/*export*/ function printMarquee(
-  szActorsColor,
-  arrActors,
-  szAnnouncementColor,
-  szAnnouncement,
-  oLineStyle
-) {
-  /*
-  TODO: Replicate
-    log(
-      `${chalk.blue("childDirPath")} and ${chalk.blue(
-        "childPackagePath"
-      )} were both found`
-    );
-  */
-  let str;
-  let arrColoredActors = [];
-  arrActors.map(actor => {
-    let chalkColor = getChalkColor(szActorsColor);
-    arrColoredActors.push(chalkColor(actor));
-  });
-  // log(`arrColoredActors: ${JSON.stringify(arrColoredActors, null, 2)}`);
-  log(`arrColoredActors: ${arrColoredActors}`);
-}
 
 function parseLineOptions(options) {
   let typeFlag;
