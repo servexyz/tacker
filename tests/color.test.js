@@ -6,6 +6,7 @@ import {
   reduceObjFromArray,
   colors,
   colorsArr,
+  printError,
   getObjFromArray,
   getChalkColor,
   printLine,
@@ -48,4 +49,17 @@ test(`${chalk.cyan("getChalkColor")} returns red when passing ${chalk.cyan(
   t.throws(() => {
     getChalkColor(colors.x);
   });
+});
+
+test(`${chalk.cyan("printError")} returns false`, async t => {
+  t.false(
+    printError(
+      {
+        fn: "test",
+        err: "this is a fake error",
+        msg: "this is a custom fake error message"
+      },
+      false
+    )
+  );
 });
