@@ -70,6 +70,28 @@ export function getChalkColor(szColor) {
   }
 }
 
+export function printError(oOptions, bPrintFlag = true) {
+  if (is.truthy(bPrintFlag) && is.truthy(oOptions)) {
+    let { fn, err, msg } = oOptions;
+    if (fn)
+      //TODO: Add initial undefined & emptyString check. Then concat all instead of piecemeal
+      printLine("red");
+    if (!is.undefined(fn)) {
+      log(`${chalk.red(fn)}`);
+    }
+    if (!is.undefined(err)) {
+      printLine({ character: ".", color: "grey" });
+      log(`${chalk.red(err)}`);
+      printLine({ character: ".", color: "grey" });
+    }
+    if (!is.undefined(msg)) {
+      log(`${chalk.grey(msg)}`);
+    }
+    printLine("red");
+  }
+  return false;
+}
+
 //TODO: Think about exporting default; tk.mirror is easier to type
 //TODO: Rename "printMirror" to just "mirror" (or something else)
 export function printMirror(
@@ -98,6 +120,7 @@ export function printMirror(
   log(mirror);
   return mirror;
 }
+
 /* 
   TODO: Add oLineStyle arg
   printMarquee(
@@ -144,6 +167,7 @@ export async function printPkgVersion(mPackageSource) {
   printMirror({ version }, "blue", "grey");
   return version;
 }
+
 export async function printPkgProp(szProperty, mPackageSource) {
   let property;
   if (is.nullOrUndefined(mPackageSource)) {
@@ -154,6 +178,7 @@ export async function printPkgProp(szProperty, mPackageSource) {
   printMirror({ property }, "blue", "grey");
   return property;
 }
+
 export function printLine(colorOrOptions) {
   let lines = [];
   let opts = parseLineOptions(colorOrOptions);
