@@ -69,7 +69,14 @@ export function getChalkColor(szColor) {
       return chalk.white;
   }
 }
-
+export function wrap(fn) {
+  return fn.apply(this, ...arguments);
+}
+export function wrapPrintError(fn, ...args) {
+  //TODO: Make a conditional logger
+  let shouldBeErrorArray = args[args.length];
+  return wrap(fn);
+}
 export function printError(oOptions, bPrintFlag = true) {
   if (is.truthy(bPrintFlag) && is.truthy(oOptions)) {
     let { fn, err, msg } = oOptions;
